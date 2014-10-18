@@ -4,7 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="251598a4-d0be-40ed-bf34-4b5f44326d05" name="Default" comment="" />
+    <list default="true" id="251598a4-d0be-40ed-bf34-4b5f44326d05" name="Default" comment="Deleted Something">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APIConnector.py" afterPath="$PROJECT_DIR$/APIConnector.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="TimesWords.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +33,8 @@
       <file leaf-file-name="APIConnector.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/APIConnector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5012854" vertical-offset="0" max-vertical-offset="778">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.75192803" vertical-offset="0" max-vertical-offset="778">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#32#53#0" expanded="true" />
               </folding>
@@ -44,6 +48,10 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -59,7 +67,7 @@
     <option name="width" value="1402" />
     <option name="height" value="877" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -317,6 +325,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Deleted Something" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted Something" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -354,8 +364,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/APIConnector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5012854" vertical-offset="0" max-vertical-offset="778">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.75192803" vertical-offset="0" max-vertical-offset="778">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#32#53#0" expanded="true" />
           </folding>

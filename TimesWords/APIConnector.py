@@ -4,7 +4,6 @@ import urllib.request
 import json
 import time
 import datetime
-import string
 
 #Connector class
 class Connector:
