@@ -29,7 +29,7 @@ class Parser:
         count = 0
         for c in article:
             if (c == ' '):
-                string_array.append(re.sub(r'\W+','', string.lower(article[last_space:count])))
+                string_array.append(re.sub(r'\W+','', string.upper(article[last_space:count])))
                 last_space = count
             count = count + 1
 
