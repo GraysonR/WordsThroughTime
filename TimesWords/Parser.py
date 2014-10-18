@@ -1,6 +1,4 @@
-__author__ = 'will'
-
-import time
+__author__ = 'will_e'
 
 import urllib2
 import string
@@ -12,21 +10,17 @@ from cookielib import CookieJar
 class Parser:
     @staticmethod
     def downloadURL(urlToLoad):
-        download_start = time.time()
         cookieJar = CookieJar()
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookieJar))
         p = opener.open(urlToLoad)
         html = p.read()
-        print("Took %s to download HTML file" % (time.time() - download_start))
         return html
 
     @staticmethod
     def parseURL(urlToLoad):
         html = Parser.downloadURL(urlToLoad)
-        parse_start = time.time()
         dom = htmldom.HtmlDom().createDom(html)
         return dom.find("p.story-body-text").text()
-        print("Parsing took %s" % (parse_start - time.time()))
 
     @staticmethod
     def stringToArray(article):
@@ -41,12 +35,5 @@ class Parser:
 
         return string_array
 
-    def main(self):
-        start_time = time.time();
-        article = Parser.parseURL("http://www.nytimes.com/2014/10/18/world/unbowed-putin-chews-the-scenery-in-milan.html?ref=world")
-        arr = Parser.stringToArray(article)
-        for a in arr:
-            print(a)
-        print("Ran in %s seconds" % (time.time() - start_time))
-
-Parser().main();
+    def getWordArrayFromURL(URL):
+        return Parser.stringToArray(Parser.parseURL(URL))
