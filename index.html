@@ -1,7 +1,60 @@
-<!DOCTYPE html>
-<html>
-	<body>
-		<h1>Hi</h1>
-	</body>
-</html>
+<doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>New York Times Scrubber</title>
+		<link rel="stylesheet" type="text/css" href="homePageCss.css">
+	</head>
 
+	<body id="layer0">
+		
+		<div id="toNYTimes">
+			<a href="www.nytimes.com" 
+			<input type="image" src="nyt-logo.png" alt="NYT Home">
+		</div>	
+
+		<div id="layer1">
+
+
+
+			<div id="topBar">
+				<div id="centerText">
+					<a href="resultsPage.html">Interesting Days</a>
+					<a href="resultsPage.html">Today</a>
+					<a href="dayPage.html">(day)</a>
+					<a href="monthPage.html">(month)</a>
+					<a href="yearPage.html">(year)</a>
+					<a href="http://www.nytimes.com">New York Times</a>
+					<a href="index.html">Home</a>
+				</div>
+
+			</div>
+
+
+
+			<div id="layer2">
+				
+				<h1>New York Times Web Scrubber</h1>
+				<p>Paste a URL from a New York Times article</p><br>
+
+				<form action="resultsPage.html" method="post">
+				Paste URL: <input type="text" URL="url" style="text-align: left">
+				<select>
+					<option>Select Section</option>
+					<option>--------------</option>
+					<option value="international">International</option>
+					<option value="national">National</option>
+					<option value="sports">Sports</option>
+					<option>--------------</option>
+				</select>
+					
+
+				<input type="submit" value="Submit"><br>
+			
+
+				</form>
+		</div>
+    </div>  
+</form>
+	</body>
+	</html>
