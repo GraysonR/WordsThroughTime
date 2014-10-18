@@ -14,15 +14,13 @@ class Parser:
         html = p.read()
         return html
 
-
     def main(self):
         parser = ParseHTML()
         parser.feed(Parser.downloadURL("http://www.nytimes.com/2014/10/18/world/unbowed-putin-chews-the-scenery-in-milan.html?ref=world"))
         parser.close()
 
 class ParseHTML(HTMLParser):
-    def hand_starttag(self, tag, attrs):
-        print(tag)
-
+    def handle_data(self, data):
+        print(data)
 
 Parser().main();
