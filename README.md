@@ -2,17 +2,17 @@ README
 
 Boilermake Fall 2014 Project.
 
-Webpages for [WordsThroughTime](www.wordsthroughti.me)
+[WordsThroughTime](http://www.wordsthroughti.me/)
 
 TODO
 * GRAYSON:
 		API calls/ parser
 		Word frequency
 		General helper
-* WILL H:
-		Word frequency and formatting
 * WILL E:
-		Word frequency and formatting
+		Take URL, download/parse HTML, noramlise, return as array
+* WILL H:
+		Take in array of words, count frequency and remove unwanted words
 * TANNER:
 		front end/ website
 		javascript creation of wordmaps
