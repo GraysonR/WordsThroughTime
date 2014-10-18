@@ -1,0 +1,14 @@
+<doctype html>
+	<html lang="en">
+	<head>
+		<meta charset"uta-8">
+		<title>Year</title>
+		<link rel="stylesheet" type="text/css" href="homePageCss.css">
+	</head>
+
+	<body id="layer0">
+		<div id="layer2">
+			This is where a word map will go.
+		</div>
+	</body>
+	</html>
