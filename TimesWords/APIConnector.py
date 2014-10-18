@@ -37,6 +37,3 @@ class Connector:
 
         print(list)
         return list
-
-c = Connector
-print(c.JSONDailyQuery())
