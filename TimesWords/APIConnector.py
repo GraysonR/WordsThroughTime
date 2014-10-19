@@ -13,11 +13,11 @@ class APIConnector:
     #Takes in a start date, end date, and a page
     #Gets 10 URLs from the api, sorted so that the newest are opened first
     @staticmethod
-    def JSONGeneralQuery(self, startDate, endDate, page):
+    def JSONGeneralQuery(startDate, endDate, page):
         #'20130701'
         #'20130726'
 
-        query = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=new+york+times&fl=web_url&fq=news_desk:("Foreign"+"National")&begin_date=' + startDate + '&end_date=' + endDate + '&sort=newest&page=' + page + '&api-key=' + Connector.key
+        query = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=new+york+times&fl=web_url&fq=news_desk:("Foreign"+"National")&begin_date=' + startDate + '&end_date=' + endDate + '&sort=newest&page=' + page + '&api-key=' + APIConnector.key
 
         opener = urllib2.build_opener()
         p = opener.open(query)
@@ -38,8 +38,8 @@ class APIConnector:
 
         s = ServerConnector()
 
-        for l in list:
-            s.upload('test', today, 'national', Wordcount.makeFrequencyDictionary(l.pop()))
+        while list:
+            s.upload('test', today, 'national', Wordcount.makeFrequencyDictionary(list.pop()))
 
         return
 
