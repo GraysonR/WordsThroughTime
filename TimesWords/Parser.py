@@ -18,7 +18,7 @@ class Parser:
 
     @staticmethod
     def __isLegalWord__(word):
-        disallowedWords = ["A", "AN", "FOR", "TO", "I", "WE", "US", "THE", "AND", "OF", "THEIR", "THEY", "HE", "SHE", "IS", "IT", "THEM", "IN", "ALSO", "AFTER", "SUCH", "BUT", "BACK", "WITH", "BE", "WAS", "NOT", "AT", "WOULD", "BECAUSE", "INTO", "OR", "THAN", "THEN", ]
+        disallowedWords = [" A", " AN", " FOR", " TO", " I", " WE", " US", " THE", " AND", " OF", " THEIR", " THEY", " HE", " SHE", " IS", " IT", " THEM", " IN", " ALSO", " AFTER", " SUCH", " BUT", " BACK", " WITH", " BE", " WAS", " NOT", " AT", " WOULD", " BECAUSE", " INTO", " OR", " THAN", " THEN"]
         for check in disallowedWords:
             if (word == check):
                 return False
@@ -30,9 +30,7 @@ class Parser:
         html = Parser.__downloadURL__(urlToLoad)
         dom = htmldom.HtmlDom().createDom(html)
         atricle = dom.find("p.story-body-text").text()
-        atricle = string.replace(atricle, ".", " ")
-        atricle = string.replace(atricle, ",", " ")
-        atricle = string.replace(atricle, " ", " ")
+        atricle = re.sub(r'\W+', ' ', atricle)
         atricle = string.replace(atricle, "  ", " ")
         return atricle
 
@@ -43,8 +41,9 @@ class Parser:
         count = 0
         for c in article:
             if (c == ' ' or c == '\n' or c == '\t'):
-                wordToAdd = re.sub(r'\W+', '', string.upper(article[last_space:count]))
-                if (wordToAdd.__len__() > 0 and Parser.__isLegalWord__(wordToAdd)):
+                wordToAdd = string.upper(article[last_space:count])
+               # wordToAdd = re.sub(r'\W+', '', string.upper(article[last_space:count]))
+                if (wordToAdd.__len__() > 1 and Parser.__isLegalWord__(wordToAdd)):
                     string_array.append(wordToAdd)
                     last_space = count
             count = count + 1
@@ -53,5 +52,3 @@ class Parser:
     @staticmethod
     def getWordArrayFromURL(URL):
         return Parser.__stringToArray__(Parser.__parseURL__(URL))
-
-#print(Parser.getWordArrayFromURL("http://www.nytimes.com/2014/10/19/world/americas/missing-mexican-student-search.html?ref=world&_r=0"))
