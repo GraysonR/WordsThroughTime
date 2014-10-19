@@ -18,7 +18,7 @@ class Parser:
 
     @staticmethod
     def __isLegalWord__(word):
-        disallowedWords = [" A", " AN", " FOR", " TO", " I", " WE", " US", " THE", " AND", " OF", " THEIR", " THEY", " HE", " SHE", " IS", " IT", " THEM", " IN", " ALSO", " AFTER", " SUCH", " BUT", " BACK", " WITH", " BE", " WAS", " NOT", " AT", " WOULD", " BECAUSE", " INTO", " OR", " THAN", " THEN"]
+        disallowedWords = ["A", "AN", "FOR", "TO", "I", "WE", "US", "THE", "AND", "OF", "THEIR", "THEY", "HE", "SHE", "IS", "IT", "THEM", "IN", "ALSO", "AFTER", "SUCH", "BUT", "BACK", "WITH", "BE", "WAS", "NOT", "AT", "WOULD", "BECAUSE", "INTO", "OR", "THAN", "THEN"]
         for check in disallowedWords:
             if (word == check):
                 return False
