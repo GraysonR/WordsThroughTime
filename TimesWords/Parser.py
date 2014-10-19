@@ -37,7 +37,7 @@ class Parser:
         last_space = 0
         count = 0
         for c in article:
-            if (c == ' '):
+            if (c == ' ' or c == '\n'):
                 wordToAdd = re.sub(r'\W+','', string.upper(article[last_space:count]))
                 if (wordToAdd.__len__() > 0 and Parser.__isLegalWord__(wordToAdd)):
                     string_array.append(wordToAdd)
