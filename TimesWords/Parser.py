@@ -18,7 +18,7 @@ class Parser:
 
     @staticmethod
     def __isLegalWord__(word):
-        disallowedWords = ["A", "AN", "FOR", "TO", "I", "WE", "US", "THE", "AND", "OF", "THEIR", "THEY", "HE", "THEM", "IN", "ALSO"]
+        disallowedWords = ["A", "AN", "FOR", "TO", "I", "WE", "US", "THE", "AND", "OF", "THEIR", "THEY", "HE", "SHE", "IS", "IT", "THEM", "IN", "ALSO", "AFTER", "SUCH", "BUT", "BACK", "WITH", "BE", "WAS", "NOT", "AT", "WOULD", "BECAUSE", "INTO", "OR", "THAN", "THEN", ]
         for check in disallowedWords:
             if (word == check):
                 return False
@@ -29,7 +29,9 @@ class Parser:
     def __parseURL__(urlToLoad):
         html = Parser.__downloadURL__(urlToLoad)
         dom = htmldom.HtmlDom().createDom(html)
-        return dom.find("p.story-body-text").text()
+        atricle = dom.find("p.story-body-text").text()
+        atricle = string.replace(atricle, ".", " ")
+        return atricle
 
     @staticmethod
     def __stringToArray__(article):
