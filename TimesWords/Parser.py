@@ -49,4 +49,4 @@ class Parser:
     def getWordArrayFromURL(URL):
         return Parser.__stringToArray__(Parser.__parseURL__(URL))
 
-print(Parser.getWordArrayFromURL("http://www.nytimes.com/2014/10/19/world/americas/missing-mexican-student-search.html?ref=world&_r=0"))
+#print(Parser.getWordArrayFromURL("http://www.nytimes.com/2014/10/19/world/americas/missing-mexican-student-search.html?ref=world&_r=0"))
