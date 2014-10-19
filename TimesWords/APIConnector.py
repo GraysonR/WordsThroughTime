@@ -13,36 +13,42 @@ class APIConnector:
     #Takes in a start date, end date, and a page
     #Gets 10 URLs from the api, sorted so that the newest are opened first
     @staticmethod
-    def JSONGeneralQuery(startDate, endDate, page):
-        #'20130701'
-        #'20130726'
+    def JSONGeneralQuery(startDate, endDate, desk, page):
+        query = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=new+york+times&fl=web_url&fq=news_desk:' + desk + '&begin_date=' + startDate + '&end_date=' + endDate + '&sort=newest&page=' + page + '&api-key=' + APIConnector.key
 
-        query = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=new+york+times&fl=web_url&fq=news_desk:("Foreign"+"National")&begin_date=' + startDate + '&end_date=' + endDate + '&sort=newest&page=' + page + '&api-key=' + APIConnector.key
-
-        opener = urllib2.build_opener()
-        p = opener.open(query)
-        urls = json.loads(p.read().decode('utf-8'))
+        p = urllib2.urlopen(query)
+        j = p.read().decode('utf-8')
+        urls = json.loads(j)
 
         return urls['response']['docs']
 
-    def uploadJSONDailyQuery(self):
+    def uploadJSONDailyQuery(self, desk):
         today = str(datetime.date.today().year) + str(datetime.date.today().month) + str(datetime.date.today().day)
         list = []
         x = 0
 
-        while(APIConnector.JSONGeneralQuery(today, today, str(x))):
-            temp = APIConnector.JSONGeneralQuery(today, today, str(x))
+        while(APIConnector.JSONGeneralQuery(today, today, desk, str(x))):
+            temp = APIConnector.JSONGeneralQuery(today, today, desk, str(x))
+
+            counter = 0
             while(temp):
                 list.append(temp.pop())
+                counter += 1
+
+            if(counter != 10):
+                break
             x += 1
 
-        s = ServerConnector()
+        dictionary = []
 
         while list:
-            s.upload('test', today, 'national', Wordcount.makeFrequencyDictionary(list.pop()))
+            Wordcount.makeFrequencyDictionaryDaily(list.pop()['web_url'], dictionary)
+
+        s = ServerConnector()
+        s.upload('test', today, desk, Wordcount.makeFrequencyDictionary(list.pop()['web_url']))
 
         return
 
 
 c = APIConnector()
-c.uploadJSONDailyQuery()
+c.uploadJSONDailyQuery('National')
