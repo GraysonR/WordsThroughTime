@@ -2,7 +2,7 @@ __author__ = 'Will_H'
 
 
 # from htmldom import htmldom
-#from Parser import stringToArray
+#from Parser import getWordArrayFromURL
 
 #Wordcount class
 class Wordcount():
