@@ -24,7 +24,4 @@ class Wordcount():
             if(counter == dictionary.__len__()):
                 dictionary.append({"word": w, "frequency": 1})
 
-        print(dictionary)
-        return
-
-Wordcount.makeFrequencyDictionary('http://www.nytimes.com/2014/10/19/us/life-in-quarantine-for-ebola-exposure-21-days-of-fear-and-loathing.html?hp&action=click&pgtype=Homepage&version=LedeSumLargeMedia&module=a-lede-package-region&region=top-news&WT.nav=top-news')
+        return dictionary
