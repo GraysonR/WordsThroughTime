@@ -2,9 +2,9 @@ __author__ = 'graysonricketts'
 
 import urllib.request
 import json
-import time
 import datetime
-import string
+from ServerConnector import ServerConnector
+from Wordcount import Wordcount
 
 #Connector class
 class Connector:
@@ -23,7 +23,7 @@ class Connector:
 
         return urls['response']['docs']
 
-    def JSONDailyQuery():
+    def uploadJSONDailyQuery():
         today = str(datetime.date.today().year) + str(datetime.date.today().month) + str(datetime.date.today().day)
         list = []
         x = 0
@@ -33,7 +33,14 @@ class Connector:
             while(temp):
                 list.append(temp.pop())
             x += 1
-            time.sleep(.5)
 
-        print(list)
-        return list
+        s = ServerConnector()
+
+        for l in list:
+            s.upload('test', today, 'national', Wordcount.makeFrequencyDictionary(l.pop()))
+
+        return
+
+
+c = Connector()
+c.uploadJSONDailyQuery()
