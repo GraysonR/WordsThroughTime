@@ -31,6 +31,9 @@ class Parser:
         dom = htmldom.HtmlDom().createDom(html)
         atricle = dom.find("p.story-body-text").text()
         atricle = string.replace(atricle, ".", " ")
+        atricle = string.replace(atricle, ",", " ")
+        atricle = string.replace(atricle, " ", " ")
+        atricle = string.replace(atricle, "  ", " ")
         return atricle
 
     @staticmethod
