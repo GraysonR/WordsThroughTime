@@ -7,29 +7,19 @@ __author__ = 'Will_H'
 #Wordcount class
 class Wordcount():
 
-    dictionary = {
-        "hi":2
-
-    }
-
-    @staticmethod
-    def inDict(word):
-        global dictionary
-        if word in dictionary.values():
-            return True
-        return False
-
     @staticmethod
     def add(article):
-        global dictionary
+        dictionary = {
+
+
+        }
         w = Wordcount
         length = len(article)
         for word in article:
-            if w.inDict(word):
+            if word in dictionary.values():
                 dictionary[word] += 1
             else:
                 dictionary[word] = 1
 
 
-arr = ["hey", "sup"]
-Wordcount().add(arr)
+
