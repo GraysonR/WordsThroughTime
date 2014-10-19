@@ -33,7 +33,6 @@ class Parser:
                 last_space = count
             count = count + 1
 
-        print(string_array)
 
         return string_array
 

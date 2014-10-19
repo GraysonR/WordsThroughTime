@@ -21,10 +21,7 @@ class Wordcount():
                 else:
                     counter += 1
 
-            if(counter != dictionary.__len__()):
-                dictionary.append({"word": w, "frequency": 1})
-
-            if(dictionary.__len__() == 0):
+            if(counter == dictionary.__len__()):
                 dictionary.append({"word": w, "frequency": 1})
 
         print(dictionary)
