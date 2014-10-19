@@ -33,8 +33,9 @@ class Parser:
                 last_space = count
             count = count + 1
 
-        return string_array
 
+        return string_array
+    
     @staticmethod
     def getWordArrayFromURL(URL):
-        return Parser.__stringToArray__(Parser.__parseURL__(URL))
+        return Parser.stringToArray(Parser.parseURL(URL))
