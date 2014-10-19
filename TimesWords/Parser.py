@@ -9,7 +9,7 @@ from cookielib import CookieJar
 #Parser class
 class Parser:
     @staticmethod
-    def downloadURL(urlToLoad):
+    def __downloadURL__(urlToLoad):
         cookieJar = CookieJar()
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookieJar))
         p = opener.open(urlToLoad)
@@ -17,13 +17,13 @@ class Parser:
         return html
 
     @staticmethod
-    def parseURL(urlToLoad):
-        html = Parser.downloadURL(urlToLoad)
+    def __parseURL__(urlToLoad):
+        html = Parser.__downloadURL__(urlToLoad)
         dom = htmldom.HtmlDom().createDom(html)
         return dom.find("p.story-body-text").text()
 
     @staticmethod
-    def stringToArray(article):
+    def __stringToArray__(article):
         string_array = []
         last_space = 0
         count = 0
@@ -35,5 +35,6 @@ class Parser:
 
         return string_array
 
+    @staticmethod
     def getWordArrayFromURL(URL):
-        return Parser.stringToArray(Parser.parseURL(URL))
+        return Parser.__stringToArray__(Parser.__parseURL__(URL))
