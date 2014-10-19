@@ -42,7 +42,6 @@ class APIConnector:
         dictionary = []
 
         while list:
-            print("BING")
             Wordcount.makeFrequencyDictionaryDaily(list.pop()['web_url'], dictionary)
 
         s = ServerConnector()
